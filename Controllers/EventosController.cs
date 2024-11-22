@@ -50,8 +50,9 @@ namespace EventManager.Controllers
         }
 
         // GET: Eventos/Create
-        public IActionResult Create()
+        public IActionResult Create(int usuarioId)
         {
+            ViewBag.UsuarioId = usuarioId;
             return View();
         }
 
@@ -64,9 +65,9 @@ namespace EventManager.Controllers
         { // pode ser retirado o bind Task<IActionResult> Create(Evento evento)
             if (ModelState.IsValid)
             {
-                _context.Add(evento);
+                _context.Eventos.Add(evento);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", "Usuarios", new { id = evento.UsuarioId });
             }
             return View(evento);
         }

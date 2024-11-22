@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EventManager.Models
 {
@@ -29,8 +30,14 @@ namespace EventManager.Models
         [Range(0, double.MaxValue)]
         public decimal valorIngresso { get; set; }
 
+
         // Relacionamento com Convidados
         public ICollection<Convidado>? Convidados { get; set; }
 
+        // Chave estrangeira para Evento
+        [ForeignKey("Usuario")]
+        public int UsuarioId { get; set; }
+
+        public Usuario? Usuario { get; set; }
     }
 }

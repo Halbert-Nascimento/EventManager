@@ -7,6 +7,7 @@ namespace EventManager.Data
     {
         public GerenciadorEventosContext(DbContextOptions<GerenciadorEventosContext> options) : base(options) { }
 
+        public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Evento> Eventos { get; set; }
         public DbSet<Convidado> Convidados { get; set; }
 
@@ -14,13 +15,21 @@ namespace EventManager.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configuração do relacionamento 1:N entre Evento e Convidados
-            modelBuilder.Entity<Convidado>()
+            // Configuração do relacionamento 1:N entre EveUsuario e Eventos
+            modelBuilder.Entity<Evento>()
+                .HasOne(c => c.Usuario)
+                .WithMany(e => e.Eventos)
+                .HasForeignKey(c => c.UsuarioId)
+                .OnDelete(DeleteBehavior.Cascade);
+        
+
+        // Configuração do relacionamento 1:N entre Evento e Convidados
+        modelBuilder.Entity<Convidado>()
                 .HasOne(c => c.Evento)
                 .WithMany(e => e.Convidados)
                 .HasForeignKey(c => c.EventoId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
-        public DbSet<EventManager.Models.Usuario> Usuario { get; set; } = default!;
+        //public DbSet<EventManager.Models.Usuario> Usuario { get; set; } = default!;
     }
 }

@@ -30,7 +30,27 @@
         </dd>
     </dl>
 </div>
+
+<hr />
+<hr />
+
+<h3>Convidados</h3>
+
+@if (Model.Eventos?.Any() == true)
+{
+    <ul>
+        @foreach (var evento in Model.Eventos)
+        {
+            <li>@evento.Titulo (@evento.valorIngresso)</li>
+        }
+    </ul>
+}
+else
+{
+    <p>Sem convidados cadastrados.</p>
+}
 <div>
+    <a asp-controller="Eventos" asp-action="Create" asp-route-usuarioId="@Model.Id" class="btn btn-primary">Adicionar Evento</a>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
