@@ -3,6 +3,14 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configurar autenticação por cookies
+builder.Services.AddAuthentication("CookieAuth")
+    .AddCookie("CookieAuth", options =>
+    {
+        options.LoginPath = "/Usuario/Login"; // Página de login
+        options.AccessDeniedPath = "/Usuario/AcessoNegado"; // Página de acesso negado
+    });
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
