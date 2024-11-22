@@ -9,9 +9,12 @@ using EventManager.Data;
 using EventManager.Models;
 using Microsoft.Extensions.Logging;
 using System.Net;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace EventManager.Controllers
 {
+    [Authorize]
     public class EventosController : Controller
     {
         private readonly GerenciadorEventosContext _context;

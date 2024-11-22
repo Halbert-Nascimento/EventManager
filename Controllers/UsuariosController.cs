@@ -53,7 +53,7 @@ namespace EventManager.Controllers
 
 
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(nameof(Index));
         }
 
 
@@ -62,7 +62,7 @@ namespace EventManager.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync("CookieAuth");
-            return RedirectToAction("Login", "Usuario");
+            return RedirectToAction("Login", "Usuarios");
         }
 
 

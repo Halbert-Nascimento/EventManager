@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Security.Cryptography;
 using System.Text;
 
 namespace EventManager.Models
@@ -27,9 +26,7 @@ namespace EventManager.Models
         //função para comparar a senha do usuário ao hash armazenado
         public bool VerificarSenha(string senha)
         {
-            using var sha256 = SHA256.Create();
-            var senhaHash = Convert.ToBase64String(sha256.ComputeHash(Encoding.UTF8.GetBytes(senha)));
-            return senhaHash == SenhaHash;
+            return BCrypt.Net.BCrypt.Verify(senha, SenhaHash);
         }
     }
 }
