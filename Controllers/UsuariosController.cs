@@ -9,6 +9,8 @@ using EventManager.Data;
 using EventManager.Models;
 using Microsoft.CodeAnalysis.Scripting;
 using Org.BouncyCastle.Crypto.Generators;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
 
 namespace EventManager.Controllers
 {
@@ -20,6 +22,51 @@ namespace EventManager.Controllers
         {
             _context = context;
         }
+        // ------------------------------------------ implemetação de login --------------
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(string email, string senha)
+        {
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Email == email);
+            if (usuario == null || !usuario.VerificarSenha(senha))
+            {
+                ViewBag.Erro = "Email ou senha inválidos.";
+                return View();
+            }
+
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, usuario.Nome),
+                new Claim(ClaimTypes.Email, usuario.Email),
+                new Claim("UsuarioId", usuario.Id.ToString())
+            };
+
+            var identify = new ClaimsIdentity(claims, "CookieAuth");
+            var principal = new ClaimsPrincipal(identify);
+
+            await HttpContext.SignInAsync("CookieAuth", principal);
+
+
+
+            return RedirectToAction("Index", "Home");
+        }
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync("CookieAuth");
+            return RedirectToAction("Login", "Usuario");
+        }
+
+
+        // ------------------------------------------
 
         // GET: Usuarios
         public async Task<IActionResult> Index()
