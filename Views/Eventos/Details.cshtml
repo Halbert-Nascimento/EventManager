@@ -1,0 +1,84 @@
+﻿@model EventManager.Models.Evento
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Evento</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Local)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Local)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Hora)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Hora)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.QuantidadeMaxPessoas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.QuantidadeMaxPessoas)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.valorIngresso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.valorIngresso)
+        </dd>
+    </dl>
+</div>
+<hr />
+<hr />
+
+<h3>Convidados</h3>
+
+@if (Model.Convidados?.Any() == true)
+{
+    <ul>
+        @foreach (var convidado in Model.Convidados)
+        {
+            <li>@convidado.Nome (@convidado.Email)</li>
+        }
+    </ul>
+}
+else
+{
+    <p>Sem convidados cadastrados.</p>
+}
+
+
+
+<hr />
+<a asp-controller="Convidados" asp-action="Create" asp-route-eventoId="@Model.Id" class="btn btn-primary">Adicionar Convidado</a>
+<hr />
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

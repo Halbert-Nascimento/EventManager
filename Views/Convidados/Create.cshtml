@@ -1,0 +1,35 @@
+﻿@model Convidado
+
+<h1>Adicionar Convidado</h1>
+
+<form asp-action="Create">
+    
+
+    <div class="form-group">
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" class="form-control" />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Sex" class="control-label"></label>
+        <input asp-for="Sex" class="form-control" />
+        <span asp-validation-for="Sex" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+
+        <label asp-for="EventoId">@ViewBag.EventoId</label>
+
+    <input type="hidden" asp-for="EventoId" value="@ViewBag.EventoId" />
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a asp-controller="Eventos" asp-action="Details" asp-route-id="@ViewBag.EventoId" class="btn btn-secondary">Cancelar</a>
+</form>
