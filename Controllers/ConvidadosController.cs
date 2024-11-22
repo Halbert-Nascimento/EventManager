@@ -145,7 +145,9 @@ namespace EventManager.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EventoId"] = new SelectList(_context.Eventos, "Id", "Descricao", convidado.EventoId);
+            
+
+            ViewData["EventoId"] = new SelectList(_context.Eventos, "Id", "Titulo", convidado.EventoId);
             return View(convidado);
         }
 

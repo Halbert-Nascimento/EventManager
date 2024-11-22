@@ -23,7 +23,7 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SenhaHash)
+            @* @Html.DisplayNameFor(model => model.SenhaHash) *@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.SenhaHash)
@@ -41,7 +41,7 @@
     <ul>
         @foreach (var evento in Model.Eventos)
         {
-            <li>@evento.Titulo (@evento.valorIngresso)</li>
+            <li>@evento.Titulo | <a asp-controller="Convidados" asp-action="Create" asp-route-eventoId="@evento.Id" class="btn btn-primary">Convidar evento</a></li>
         }
     </ul>
 }

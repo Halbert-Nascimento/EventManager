@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EventManager.Data;
 using EventManager.Models;
+using Microsoft.CodeAnalysis.Scripting;
+using Org.BouncyCastle.Crypto.Generators;
 
 namespace EventManager.Controllers
 {
@@ -59,6 +61,8 @@ namespace EventManager.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Gere o hash para senha
+                usuario.SenhaHash = BCrypt.Net.BCrypt.HashPassword(usuario.SenhaHash);
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
