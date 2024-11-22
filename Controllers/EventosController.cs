@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace EventManager.Controllers
 {
-    [Authorize]
+    
     public class EventosController : Controller
     {
         private readonly GerenciadorEventosContext _context;
@@ -53,6 +53,7 @@ namespace EventManager.Controllers
         }
 
         // GET: Eventos/Create
+        [Authorize]
         public IActionResult Create(int usuarioId)
         {
             ViewBag.UsuarioId = usuarioId;
@@ -78,6 +79,7 @@ namespace EventManager.Controllers
 
 
         // GET: Eventos/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -130,6 +132,7 @@ namespace EventManager.Controllers
         }
 
         // GET: Eventos/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -148,6 +151,7 @@ namespace EventManager.Controllers
         }
 
         // POST: Eventos/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
