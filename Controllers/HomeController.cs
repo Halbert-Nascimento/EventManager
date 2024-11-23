@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using EventManager.Data;
 using EventManager.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,17 +7,23 @@ namespace EventManager.Controllers
 {
     public class HomeController : Controller
     {
-
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly GerenciadorEventosContext _context;
+        public HomeController(GerenciadorEventosContext context)
         {
-            _logger = logger;
+            _context = context;
         }
+
+        //private readonly ILogger<HomeController> _logger;
+
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    _logger = logger;
+        //}
 
         public IActionResult Index()
         {
-            return View();
+            var eventos = _context.Eventos.ToList();
+            return View(eventos);
         }
 
         public IActionResult Privacy()

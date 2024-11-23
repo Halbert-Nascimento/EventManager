@@ -41,7 +41,11 @@
     <ul>
         @foreach (var evento in Model.Eventos)
         {
-            <li>@evento.Titulo | <a asp-controller="Convidados" asp-action="Create" asp-route-eventoId="@evento.Id" class="btn btn-primary">Convidar evento</a></li>
+            <li>
+                @evento.Titulo | <a asp-controller="Convidados" asp-action="Create" asp-route-eventoId="@evento.Id" class="btn btn-primary">Convidar evento</a>
+                <a type="button" class="btn btn-danger" asp-controller="Eventos" asp-action="Delete" asp-route-id="@evento.Id">Remover Evento</a>
+                <a type="button" class="btn btn-primary" asp-controller="Eventos" asp-action="Edit" asp-route-id="@evento.Id">Editar evento</a>
+            </li>
         }
     </ul>
 }
