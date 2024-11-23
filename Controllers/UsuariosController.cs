@@ -75,12 +75,21 @@ namespace EventManager.Controllers
         }
 
         // GET: Usuarios/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details()
         {
-            if (id == null)
+            // Recupera o ID do usuário logado
+            var usuarioId = User.FindFirst("UsuarioId")?.Value;
+
+            if (usuarioId == null)
             {
-                return NotFound();
+                return RedirectToAction("Login", "Usuarios");
             }
+            int id = int.Parse(usuarioId);
+
+            //if (id == null)
+            //{
+            //    return NotFound();
+            //}
 
             var usuario = await _context.Usuarios
                 .Include(e => e.Eventos)
@@ -100,8 +109,7 @@ namespace EventManager.Controllers
         }
 
         // POST: Usuarios/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nome,Email,SenhaHash")] Usuario usuario)
