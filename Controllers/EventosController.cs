@@ -54,9 +54,17 @@ namespace EventManager.Controllers
 
         // GET: Eventos/Create
         [Authorize]
-        public IActionResult Create(int usuarioId)
+        public IActionResult Create()
         {
-            ViewBag.UsuarioId = usuarioId;
+            // Recupera o ID do usuário logado
+            var usuarioId = User.FindFirst("UsuarioId")?.Value;
+
+            if(usuarioId == null)
+            {
+                return RedirectToAction("Login", "Usuarios");
+            }
+
+            ViewBag.UsuarioId = int.Parse(usuarioId);
             return View();
         }
 
