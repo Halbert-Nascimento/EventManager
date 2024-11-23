@@ -4,60 +4,6 @@
     ViewData["Title"] = "Perfil";
 }
 
-@* <h1>Details</h1> *@
-
-@* <div> *@
-@*     <h4>Usuario</h4> *@
-@*     <hr /> *@
-@*     <dl class="row"> *@
-@*         <dt class = "col-sm-2"> *@
-@*             @Html.DisplayNameFor(model => model.Nome) *@
-@*         </dt> *@
-@*         <dd class = "col-sm-10"> *@
-@*             @Html.DisplayFor(model => model.Nome) *@
-@*         </dd> *@
-@*         <dt class = "col-sm-2"> *@
-@*             @Html.DisplayNameFor(model => model.Email) *@
-@*         </dt> *@
-@*         <dd class = "col-sm-10"> *@
-@*             @Html.DisplayFor(model => model.Email) *@
-@*         </dd> *@
-@*         <dt class = "col-sm-2"> *@
-@*             @* @Html.DisplayNameFor(model => model.SenhaHash) *@ 
-@*         </dt> *@
-@*         <dd class = "col-sm-10"> *@
-@*             @Html.DisplayFor(model => model.SenhaHash) *@
-@*         </dd> *@
-@*     </dl> *@
-@* </div> *@
-
-@* <hr /> *@
-@* <hr /> *@
-
-@* <h3>Convidados</h3> *@
-
-@* @if (Model.Eventos?.Any() == true) *@
-@* { *@
-@*     <ul> *@
-@*         @foreach (var evento in Model.Eventos) *@
-@*         { *@
-@*             <li> *@
-@*                 @evento.Titulo | <a asp-controller="Convidados" asp-action="Create" asp-route-eventoId="@evento.Id" class="btn btn-primary">Convidar evento</a> *@
-@*                 <a type="button" class="btn btn-danger" asp-controller="Eventos" asp-action="Delete" asp-route-id="@evento.Id">Remover Evento</a> *@
-@*                 <a type="button" class="btn btn-primary" asp-controller="Eventos" asp-action="Edit" asp-route-id="@evento.Id">Editar evento</a> *@
-@*             </li> *@
-@*         } *@
-@*     </ul> *@
-@* } *@
-@* else *@
-@* { *@
-@*     <p>Sem Evento cadastrado.</p> *@
-@* } *@
-@* <div> *@
-@*     <a asp-controller="Eventos" asp-action="Create" asp-route-usuarioId="@Model.Id" class="btn btn-primary">Adicionar Evento</a> *@
-@*     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> | *@
-@*     <a asp-action="Index">Back to List</a> *@
-@* </div> *@
 
 
 <div class="container mt-5">
@@ -99,6 +45,7 @@
                                     <a class="btn btn-secondary" asp-controller="Convidados" asp-action="Create" asp-route-eventoId="@evento.Id">Convidar</a>
                                     <a class="btn btn-primary" asp-controller="Eventos" asp-action="Edit" asp-route-id="@evento.Id">Editar</a>
                                     <a class="btn btn-danger" asp-controller="Eventos" asp-action="Delete" asp-route-id="@evento.Id">Excluir</a>
+                                    <a class="btn btn-success" asp-controller="Eventos" asp-action="Details" asp-route-id="@evento.Id">Confirmados</a>
                                 </td>
                             </tr>
                         </tbody>

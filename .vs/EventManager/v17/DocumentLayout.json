@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\Prova_pratica_romes_c#\\EventManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|d:\\prova_pratica_romes_c#\\eventmanager\\views\\usuarios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|solutionrelative:views\\usuarios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|d:\\prova_pratica_romes_c#\\eventmanager\\views\\eventos\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|solutionrelative:views\\eventos\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|d:\\prova_pratica_romes_c#\\eventmanager\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|solutionrelative:controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|d:\\prova_pratica_romes_c#\\eventmanager\\views\\usuarios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|solutionrelative:views\\usuarios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,6 +35,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Eventos\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Eventos\\Details.cshtml",
+              "ToolTip": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Eventos\\Details.cshtml*",
+              "RelativeToolTip": "Views\\Eventos\\Details.cshtml*",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAF8AAABuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-23T15:54:41.612Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -47,13 +64,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Usuarios\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Usuarios\\Details.cshtml",
-              "ToolTip": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Usuarios\\Details.cshtml*",
-              "RelativeToolTip": "Views\\Usuarios\\Details.cshtml*",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFAAAAAXAAAAAAAAAA==",
+              "ToolTip": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Usuarios\\Details.cshtml",
+              "RelativeToolTip": "Views\\Usuarios\\Details.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAC8AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-23T14:04:26.385Z",
               "EditorCaption": ""

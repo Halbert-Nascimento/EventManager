@@ -4,81 +4,125 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+@* <h1>Details</h1> *@
 
-<div>
-    <h4>Evento</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Titulo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Titulo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descricao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descricao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Local)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Local)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Data)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Data)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Hora)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Hora)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.QuantidadeMaxPessoas)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.QuantidadeMaxPessoas)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.valorIngresso)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.valorIngresso)
-        </dd>
-    </dl>
-</div>
-<hr />
-<hr />
+@* <div> *@
+@*     <h4>Evento</h4> *@
+@*     <hr /> *@
+@*     <dl class="row"> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.Titulo) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.Titulo) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.Descricao) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.Descricao) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.Local) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.Local) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.Data) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.Data) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.Hora) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.Hora) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.QuantidadeMaxPessoas) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.QuantidadeMaxPessoas) *@
+@*         </dd> *@
+@*         <dt class = "col-sm-2"> *@
+@*             @Html.DisplayNameFor(model => model.valorIngresso) *@
+@*         </dt> *@
+@*         <dd class = "col-sm-10"> *@
+@*             @Html.DisplayFor(model => model.valorIngresso) *@
+@*         </dd> *@
+@*     </dl> *@
+@* </div> *@
+@* <hr /> *@
+@* <hr /> *@
 
-<h3>Convidados</h3>
+@* <h3>Convidados</h3> *@
 
-@if (Model.Convidados?.Any() == true)
-{
-    <ul>
-        @foreach (var convidado in Model.Convidados)
-        {
-            <li>@convidado.Nome (@convidado.Email)</li>
-        }
-    </ul>
-}
-else
-{
-    <p>Sem convidados cadastrados.</p>
-}
+@* @if (Model.Convidados?.Any() == true) *@
+@* { *@
+@*     <ul> *@
+@*         @foreach (var convidado in Model.Convidados) *@
+@*         { *@
+@*             <li>@convidado.Nome (@convidado.Email)</li> *@
+@*         } *@
+@*     </ul> *@
+@* } *@
+@* else *@
+@* { *@
+@*     <p>Sem convidados cadastrados.</p> *@
+@* } *@
 
 
 
-<hr />
-<a asp-controller="Convidados" asp-action="Create" asp-route-eventoId="@Model.Id" class="btn btn-primary">Adicionar Convidado</a>
-<hr />
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+@* <hr /> *@
+@* <a asp-controller="Convidados" asp-action="Create" asp-route-eventoId="@Model.Id" class="btn btn-primary">Adicionar Convidado</a> *@
+@* <hr /> *@
+@* <div> *@
+@*     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> | *@
+@*     <a asp-action="Index">Back to List</a> *@
+@* </div> *@
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>@Model.Titulo</h1>
+            <p>@Model.Descricao</p>
+            <p><b>Local:</b> @Model.Local</p>
+            <p><b>Data:</b> @Model.Data</p>
+            <p><b>Hora:</b> @Model.Hora</p>
+            <p><b>Vagas:</b> @Model.QuantidadeMaxPessoas</p>
+            <p><b>Valor:</b> R$ @Model.valorIngresso</p>
+            <a class="btn btn-primary" asp-controller="Convidados" asp-action="Create" asp-route-id="@Model.Id">Convidar Participantes</a>
+        </div>
+        <div class="col-md-6">
+            <h2>Convidados</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Convidados?.Any() == true){
+                        @foreach (var convidado in Model.Convidados){
+
+                    <tr>
+                        <td>@convidado.Nome</td>
+                        <td>@convidado.Email</td>
+                        <td>
+                                    <a class="btn btn-secondary" asp-controller="Convidados" asp-action="Details" asp-route-id="@convidado.Id">Ver Detalhes</a>
+                                    <a class="btn btn-danger" asp-controller="Convidados" asp-action="Delete" asp-route-id="@convidado.Id">Remover</a>
+                        </td>
+                    </tr>
+                        }
+                    }else{
+                        <p>Sem convidados cadastrados.</p>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
