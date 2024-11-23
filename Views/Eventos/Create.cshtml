@@ -1,69 +1,55 @@
 ﻿@model EventManager.Models.Evento
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Criar evento";
 }
 
-<h1>Create</h1>
-
-<h4>Evento</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Titulo" class="control-label"></label>
-                <input asp-for="Titulo" class="form-control" />
-                <span asp-validation-for="Titulo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Descricao" class="control-label"></label>
-                <input asp-for="Descricao" class="form-control" placeholder="Insira uma descrição detalhada do evento" />
-                <span asp-validation-for="Descricao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Local" class="control-label"></label>
-                <input asp-for="Local" class="form-control" placeholder="Insira endereço completo com cidade-estado" />
-                <span asp-validation-for="Local" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Data" class="control-label"></label>
-                <input asp-for="Data" class="form-control"  />
-                <span asp-validation-for="Data" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Hora" class="control-label"></label>
-                <input asp-for="Hora" class="form-control" />
-                <span asp-validation-for="Hora" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QuantidadeMaxPessoas" class="control-label"></label>
-                <input asp-for="QuantidadeMaxPessoas" class="form-control" />
-                <span asp-validation-for="QuantidadeMaxPessoas" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="valorIngresso" class="control-label"></label>
-                <input asp-for="valorIngresso" class="form-control" />
-                <span asp-validation-for="valorIngresso" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="UsuarioId">@ViewBag.UsuarioId</label>
-
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="display-4">Criar Novo Evento</h1>
+            <form asp-action="Create">
+                @* ja passa para o formulario o id do usario que voi recebido na viewsBag *@
                 <input type="hidden" asp-for="UsuarioId" value="@ViewBag.UsuarioId" />
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+
+                <div class="mb-3">
+                    <label asp-for="Titulo" class="form-label">Título do Evento</label>
+                    <input asp-for="Titulo" type="text" class="form-control" required>
+                    <span asp-validation-for="Titulo" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Descricao" class="form-label">Descrição</label>
+                    <textarea asp-for="Descricao" class="form-control" rows="3" required></textarea>
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Local" class="form-label">Local</label>
+                    <input asp-for="Local"  type="text" class="form-control" placeholder="Insira endereço completo" required>
+                    <span asp-validation-for="Local" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Data" class="form-label">Data</label>
+                    <input asp-for="Data"  type="date" class="form-control" required>
+                    <span asp-validation-for="Data" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Hora" class="form-label">Hora</label>
+                    <input asp-for="Hora" type="time" class="form-control" required>
+                    <span asp-validation-for="Hora" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="QuantidadeMaxPessoas" class="form-label">Vagas Disponíveis</label>
+                    <input asp-for="QuantidadeMaxPessoas" type="number" class="form-control" required>
+                    <span asp-validation-for="QuantidadeMaxPessoas" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="valorIngresso" class="form-label">Valor do Ingresso</label>
+                    <input asp-for="valorIngresso" type="number" class="form-control" required>
+                    <span asp-validation-for="valorIngresso" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Criar Evento</button>
+                <a href="#" class="btn btn-secondary">Voltar</a>
+            </form>
+        </div>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
