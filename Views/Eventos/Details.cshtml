@@ -93,7 +93,7 @@
             <p><b>Hora:</b> @Model.Hora</p>
             <p><b>Vagas:</b> @Model.QuantidadeMaxPessoas</p>
             <p><b>Valor:</b> R$ @Model.valorIngresso</p>
-            <a class="btn btn-primary" asp-controller="Convidados" asp-action="Create" asp-route-id="@Model.Id">Convidar Participantes</a>
+            <a class="btn btn-primary" asp-controller="Convidados" asp-action="Create" asp-route-eventoId="@Model.Id">Convidar Participantes</a>
         </div>
         <div class="col-md-6">
             <h2>Convidados</h2>
