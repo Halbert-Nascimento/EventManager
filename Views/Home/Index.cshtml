@@ -1,79 +1,34 @@
 ﻿@model IEnumerable<EventManager.Models.Evento>
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Eventos";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bem vindo ao Gerenciador de eventos</h1>
-    
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h1 class="display-4">Próximos Eventos</h1>
+
+            @foreach (var item in Model)
+            {
+            <div class="card mb-3">
+                <div class="card-body">
+                        <h5 class="card-title">@item.Titulo</h5>
+                        <p class="card-text">@item.Descricao</p>
+                        <p class="card-text"><small class="text-muted">Local: @item.Local</small></p>
+                        <p class="card-text"><small class="text-muted">Data: @item.Data</small></p>
+                        <p class="card-text"><small class="text-muted">Hora: @item.Hora</small></p>
+                        <p class="card-text"><small class="text-muted">Vagas: @item.QuantidadeMaxPessoas</small></p>
+                        <p class="card-text"><small class="text-muted">Valor: R$ @item.valorIngresso</small></p>
+                        <a class="btn btn-primary" asp-controller="Convidados" asp-action="Create" asp-route-eventoId="@item.Id">Inscrever-se</a>
+                </div>
+            </div>
+            }
+        </div>
+        <div class="col-md-4">
+            <h2 class="h4">Crie seu Evento</h2>
+            <p>Organize seus próprios eventos e alcance mais pessoas.</p>        
+            <a class="btn btn-primary" asp-controller="Eventos" asp-action="Create" asp-route-usuarioId="5">Criar Evento</a>
+        </div>
+    </div>
 </div>
-
-
-<h1>Eventos ativos</h1>
-
-<p>
-    <a asp-controller="Eventos" asp-action="Create" asp-route-usuarioId="5" class="btn btn-primary">Criar novo Evento</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Titulo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descricao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Local)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Data)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hora)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.QuantidadeMaxPessoas)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.valorIngresso)
-            </th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Titulo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Descricao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Local)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Data)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Hora)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.QuantidadeMaxPessoas)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.valorIngresso)
-                </td>
-                <td>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-
-                        <a type="button" class="btn btn-primary" asp-controller="Convidados" asp-action="Create" asp-route-eventoId="@item.Id">Gegistrar no evento</a>
-
-                    </div>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
