@@ -24,19 +24,26 @@
                         </li>
                         
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Create">Criar conta</a>
-                        </li>
+                        
 
                        
                         @if (User.Identity.IsAuthenticated)
                         {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Details">Meus Eventos</a>
+                            </li>
+
                             <form asp-controller="Usuarios" asp-action="Logout" method="post" style="display: inline;">
                                 <button type="submit" class="btn btn-link" style="text-decoration: none; color: inherit;">
                                     Logout
                                 </button>
                             </form>               
                         }else{
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Create">Criar conta</a>
+                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Login">Login</a>
                             </li>
