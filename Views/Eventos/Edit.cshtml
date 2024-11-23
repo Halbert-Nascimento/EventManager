@@ -1,62 +1,60 @@
 ﻿@model EventManager.Models.Evento
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Evento";
 }
 
-<h1>Edit</h1>
-
-<h4>Evento</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="display-4">Editar Evento</h1>
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
+                <div class="mb-3">
                 <label asp-for="Titulo" class="control-label"></label>
                 <input asp-for="Titulo" class="form-control" />
                 <span asp-validation-for="Titulo" class="text-danger"></span>
             </div>
-            <div class="form-group">
+                <div class="mb-3">
                 <label asp-for="Descricao" class="control-label"></label>
-                <input asp-for="Descricao" class="form-control" />
+                    <input asp-for="Descricao" type="text" class="form-control" />
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
-            <div class="form-group">
+                <div class="mb-3">
                 <label asp-for="Local" class="control-label"></label>
                 <input asp-for="Local" class="form-control" />
                 <span asp-validation-for="Local" class="text-danger"></span>
             </div>
-            <div class="form-group">
+                <div class="mb-3">
                 <label asp-for="Data" class="control-label"></label>
-                <input asp-for="Data" class="form-control" />
+                    <input asp-for="Data" type="date" class="form-control" />
                 <span asp-validation-for="Data" class="text-danger"></span>
             </div>
-            <div class="form-group">
+                <div class="mb-3">
                 <label asp-for="Hora" class="control-label"></label>
-                <input asp-for="Hora" class="form-control" />
+                    <input asp-for="Hora" type="time" class="form-control" />
                 <span asp-validation-for="Hora" class="text-danger"></span>
             </div>
-            <div class="form-group">
+                <div class="mb-3">
                 <label asp-for="QuantidadeMaxPessoas" class="control-label"></label>
-                <input asp-for="QuantidadeMaxPessoas" class="form-control" />
+                    <input asp-for="QuantidadeMaxPessoas" type="number" class="form-control" />
                 <span asp-validation-for="QuantidadeMaxPessoas" class="text-danger"></span>
             </div>
-            <div class="form-group">
+                <div class="mb-3">
                 <label asp-for="valorIngresso" class="control-label"></label>
-                <input asp-for="valorIngresso" class="form-control" />
+                    <input asp-for="valorIngresso" type="number" class="form-control" />
                 <span asp-validation-for="valorIngresso" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
+
+                <button type="submit" class="btn btn-primary">Salvar Alteração</button>
         </form>
+        </div>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-controller="usuarios" asp-action="details">Voltar para eventos</a>
 </div>
 
 @section Scripts {
