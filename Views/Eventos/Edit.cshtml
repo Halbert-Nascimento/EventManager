@@ -10,7 +10,7 @@
             <h1 class="display-4">Editar Evento</h1>
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="@Model.Id" />
                 <div class="mb-3">
                 <label asp-for="Titulo" class="control-label"></label>
                 <input asp-for="Titulo" class="form-control" />
