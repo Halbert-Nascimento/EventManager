@@ -1,0 +1,26 @@
+﻿@model IEnumerable<EventManager.Models.Evento>
+@{
+    ViewData["Title"] = "Sem permissao";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Acesso Negado
+                    </h5>
+                    <br />
+                    <p class="card-text">
+
+                        Você não possui permissão de acesso ou edição dessa rota.  
+                        
+                    </p><br />
+                    <hr />
+                    <a class="btn btn-primary" asp-controller="Home" asp-action="Index">Voltar para a Página Inicial</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

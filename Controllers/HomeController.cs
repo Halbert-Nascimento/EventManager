@@ -31,6 +31,11 @@ namespace EventManager.Controllers
             return View();
         }
 
+        public IActionResult NoAccess()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
