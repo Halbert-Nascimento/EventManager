@@ -157,6 +157,8 @@ namespace EventManager.Controllers
             {
                 try
                 {
+                    // Gere o hash para senha
+                    usuario.SenhaHash = BCrypt.Net.BCrypt.HashPassword(usuario.SenhaHash);
                     _context.Update(usuario);
                     await _context.SaveChangesAsync();
                 }
