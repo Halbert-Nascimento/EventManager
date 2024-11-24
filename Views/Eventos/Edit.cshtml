@@ -9,39 +9,40 @@
         <div class="col-md-8">
             <h1 class="display-4">Editar Evento</h1>
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="@Model.Id" />
-                <div class="mb-3">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>              
+                <input type="hidden" asp-for="UsuarioId" value="@ViewBag.UsuarioId" />
+                <input type="hidden" asp-for="@Model.Id" />
+            <div class="mb-3">
                 <label asp-for="Titulo" class="control-label"></label>
                 <input asp-for="Titulo" class="form-control" />
                 <span asp-validation-for="Titulo" class="text-danger"></span>
             </div>
-                <div class="mb-3">
+            <div class="mb-3">
                 <label asp-for="Descricao" class="control-label"></label>
                     <input asp-for="Descricao" type="text" class="form-control" />
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
-                <div class="mb-3">
+            <div class="mb-3">
                 <label asp-for="Local" class="control-label"></label>
                 <input asp-for="Local" class="form-control" />
                 <span asp-validation-for="Local" class="text-danger"></span>
             </div>
-                <div class="mb-3">
+            <div class="mb-3">
                 <label asp-for="Data" class="control-label"></label>
                     <input asp-for="Data" type="date" class="form-control" />
                 <span asp-validation-for="Data" class="text-danger"></span>
             </div>
-                <div class="mb-3">
+            <div class="mb-3">
                 <label asp-for="Hora" class="control-label"></label>
                     <input asp-for="Hora" type="time" class="form-control" />
                 <span asp-validation-for="Hora" class="text-danger"></span>
             </div>
-                <div class="mb-3">
+            <div class="mb-3">
                 <label asp-for="QuantidadeMaxPessoas" class="control-label"></label>
                     <input asp-for="QuantidadeMaxPessoas" type="number" class="form-control" />
                 <span asp-validation-for="QuantidadeMaxPessoas" class="text-danger"></span>
             </div>
-                <div class="mb-3">
+            <div class="mb-3">
                 <label asp-for="valorIngresso" class="control-label"></label>
                     <input asp-for="valorIngresso" type="number" class="form-control" />
                 <span asp-validation-for="valorIngresso" class="text-danger"></span>
