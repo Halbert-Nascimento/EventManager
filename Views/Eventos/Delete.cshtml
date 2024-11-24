@@ -4,9 +4,11 @@
     ViewData["Title"] = "Delete evento";
 }
 
-<h3>Tem certeza de que deseja excluir?</h3>
+<h3>Tem certeza de que deseja excluir esse evento?</h3>
 <div>
-    <h4>Evento</h4>
+    <div class="alert alert-danger" role="alert">
+        Todos participantes associados ao evento serão excluídos permanentemente. Esta ação não pode ser desfeita.
+    </div>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
