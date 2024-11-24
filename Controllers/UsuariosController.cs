@@ -53,7 +53,7 @@ namespace EventManager.Controllers
 
 
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Details));
         }
 
 
@@ -86,11 +86,6 @@ namespace EventManager.Controllers
             }
             int id = int.Parse(usuarioId);
 
-            //if (id == null)
-            //{
-            //    return NotFound();
-            //}
-
             var usuario = await _context.Usuarios
                 .Include(e => e.Eventos)
                 .FirstOrDefaultAsync(m => m.Id == id);
@@ -120,7 +115,7 @@ namespace EventManager.Controllers
                 usuario.SenhaHash = BCrypt.Net.BCrypt.HashPassword(usuario.SenhaHash);
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Login));
             }
             return View(usuario);
         }
@@ -173,7 +168,7 @@ namespace EventManager.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Details));
             }
             return View(usuario);
         }
@@ -208,7 +203,7 @@ namespace EventManager.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Create));
         }
 
         private bool UsuarioExists(int id)
