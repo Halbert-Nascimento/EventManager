@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EventManager.Data;
 using EventManager.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EventManager.Controllers
 {
@@ -152,6 +153,7 @@ namespace EventManager.Controllers
         }
 
         // GET: Convidados/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

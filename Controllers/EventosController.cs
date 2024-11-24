@@ -37,17 +37,30 @@ namespace EventManager.Controllers
             if (id == null)
             {
                 return NotFound();
-            }// usar try chat no lugar do if
+            }           
 
-            var evento = await _context.Eventos
-            .Include(e => e.Convidados)
-            .FirstOrDefaultAsync(e => e.Id == id);
-
-            
-            if (evento == null)
+            //recuperar evento
+            var evento = await _context.Eventos.FindAsync(id);
+            if(evento == null)
             {
                 return NotFound();
             }
+
+            //verifcar se usuario esta autenticado
+            if (User.Identity.IsAuthenticated)
+            {
+                //recurar o id do usuario logado
+                var usuarioId = User.FindFirst("UsuarioId")?.Value;
+                //verifica se usuario id não e nulo e se o evento pertence a esse usuario 
+                if(usuarioId != null && int.Parse(usuarioId) == evento.UsuarioId)
+                {
+                    //faz a busca dos convidados
+                    evento = await _context.Eventos
+                        .Include(e => e.Convidados)
+                        .FirstOrDefaultAsync(e => e.Id == id);
+                }
+            }
+           
 
             return View(evento);
         }
