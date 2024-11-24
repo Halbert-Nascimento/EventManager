@@ -1,42 +1,23 @@
 ﻿@model EventManager.Models.Convidado
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Participante info";
 }
 
-<h1>Details</h1>
 
-<div>
-    <h4>Convidado</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Sex)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Sex)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Evento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Evento.Titulo)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Detalhes do Participante</h5>
+                    <p class="card-text"><strong class="pe-3">Nome: </strong>@Model.Nome</p>
+                    <p class="card-text"><strong class="pe-3">Sexo: </strong>@Model.Sex</p>
+                    <p class="card-text"><strong class="pe-3">Email: </strong>@Model.Email</p>
+                    <p class="card-text"><strong class="pe-3">Evento: </strong>@Model.Evento.Titulo</p>
+                    <a class="btn btn-primary" asp-controller="Eventos" asp-action="Details" asp-route-id="@Model.Evento.Id">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
