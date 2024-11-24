@@ -93,15 +93,29 @@ namespace EventManager.Controllers
             if (id == null)
             {
                 return NotFound();
-            } // usar um try catch no lugar do if
-         
+            }
+
+            // Recupera o ID do usuário logado
+            var usuarioId = int.Parse(User.FindFirst("UsuarioId")?.Value);
+            //if ((usuarioId == null))
+            //{
+            //    return NotFound();
+            //}
+            ViewBag.UsuarioId = usuarioId;
+
 
             var evento = await _context.Eventos.FindAsync(id);
             if (evento == null)
             {
                 return NotFound();
             }
-            return View(evento);
+
+            if( evento.UsuarioId != usuarioId)
+            {
+                return NotFound();
+            }
+
+                return View(evento);
         }
 
         // POST: Eventos/Edit/5
@@ -109,7 +123,7 @@ namespace EventManager.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Titulo,Descricao,Local,Data,Hora,QuantidadeMaxPessoas,valorIngresso")] Evento evento)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Titulo,Descricao,Local,Data,Hora,QuantidadeMaxPessoas,valorIngresso, UsuarioId")] Evento evento)
         {
             if (id != evento.Id)
             {
@@ -118,6 +132,7 @@ namespace EventManager.Controllers
 
             if (ModelState.IsValid)
             {
+                
                 try
                 {
                     _context.Update(evento);
