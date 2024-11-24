@@ -95,13 +95,6 @@ namespace EventManager.Controllers
                 return NotFound();
             }
 
-            // Recupera o ID do usuário logado
-            var usuarioId = int.Parse(User.FindFirst("UsuarioId")?.Value);
-            //if ((usuarioId == null))
-            //{
-            //    return NotFound();
-            //}
-            ViewBag.UsuarioId = usuarioId;
 
 
             var evento = await _context.Eventos.FindAsync(id);
@@ -110,17 +103,19 @@ namespace EventManager.Controllers
                 return NotFound();
             }
 
+            // Recupera o ID do usuário logado
+            var usuarioId = int.Parse(User.FindFirst("UsuarioId")?.Value);
+            
             if( evento.UsuarioId != usuarioId)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
-                return View(evento);
+            ViewBag.UsuarioId = usuarioId;
+            return View(evento);
         }
 
         // POST: Eventos/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Titulo,Descricao,Local,Data,Hora,QuantidadeMaxPessoas,valorIngresso, UsuarioId")] Evento evento)
@@ -168,6 +163,13 @@ namespace EventManager.Controllers
             if (evento == null)
             {
                 return NotFound();
+            }
+            // Recupera o ID do usuário logado
+            var usuarioId = int.Parse(User.FindFirst("UsuarioId")?.Value);
+
+            if (evento.UsuarioId != usuarioId)
+            {
+                return RedirectToAction("NoAccess", "Home");
             }
 
             return View(evento);
