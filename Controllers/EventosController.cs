@@ -157,7 +157,7 @@ namespace EventManager.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", "Usuarios");
             }
             return View(evento);
         }
@@ -201,7 +201,7 @@ namespace EventManager.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Details", "Usuarios");
         }
 
         // ___________________________________________________________apagar
