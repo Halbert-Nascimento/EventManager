@@ -4,52 +4,91 @@
     ViewData["Title"] = "Criar evento";
 }
 
-<div class="container mt-5">
+
+<div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1 class="display-4">Criar Novo Evento</h1>
-            <form asp-action="Create">
-                @* ja passa para o formulario o id do usario que voi recebido na viewsBag *@
-                <input type="hidden" asp-for="UsuarioId" value="@ViewBag.UsuarioId" />
+            <div class="card shadow-sm">
+                <div class="card-header bg-white text-center py-3">
+                    <h2 class="card-title mb-0">
+                        <i class="bi bi-calendar-event"></i> Novo Evento
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        @* ja passa para o formulario o id do usario que voi recebido na viewsBag *@
+                        <input type="hidden" asp-for="UsuarioId" value="@ViewBag.UsuarioId" />
 
-                <div class="mb-3">
-                    <label asp-for="Titulo" class="form-label">Título do Evento</label>
-                    <input asp-for="Titulo" type="text" class="form-control" required>
-                    <span asp-validation-for="Titulo" class="text-danger"></span>
+                        <div class="mb-3">
+                            <label asp-for="Titulo" class="form-label"></label>
+                            <input asp-for="Titulo" class="form-control" placeholder="Digite o título do evento" />
+                            <span asp-validation-for="Titulo" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Descricao" class="form-label"></label>
+                            <textarea asp-for="Descricao" class="form-control" rows="4"
+                                      placeholder="Descreva os detalhes do evento"></textarea>
+                            <span asp-validation-for="Descricao" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Local" class="form-label"></label>
+                            <input asp-for="Local" class="form-control" placeholder="Endereço do evento" />
+                            <span asp-validation-for="Local" class="text-danger"></span>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="Data" class="form-label"></label>
+                                <input asp-for="Data" class="form-control" type="date" />
+                                <span asp-validation-for="Data" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Hora" class="form-label"></label>
+                                <input asp-for="Hora" class="form-control" type="time" />
+                                <span asp-validation-for="Hora" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="QuantidadeMaxPessoas" class="form-label"></label>
+                                <input asp-for="QuantidadeMaxPessoas" class="form-control" type="number" min="1" />
+                                <span asp-validation-for="QuantidadeMaxPessoas" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="valorIngresso" class="form-label"></label>
+                                <div class="input-group">
+                                    <span class="input-group-text">R$</span>
+                                    <input asp-for="valorIngresso" class="form-control" type="number" step="0.01" min="0" />
+                                </div>
+                                <span asp-validation-for="valorIngresso" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Cadastrar Evento</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label asp-for="Descricao" class="form-label">Descrição</label>
-                    <textarea asp-for="Descricao" class="form-control" rows="3" required></textarea>
-                    <span asp-validation-for="Descricao" class="text-danger"></span>
-                </div>
-                <div class="mb-3">
-                    <label asp-for="Local" class="form-label">Local</label>
-                    <input asp-for="Local"  type="text" class="form-control" placeholder="Insira endereço completo" required>
-                    <span asp-validation-for="Local" class="text-danger"></span>
-                </div>
-                <div class="mb-3">
-                    <label asp-for="Data" class="form-label">Data</label>
-                    <input asp-for="Data"  type="date" class="form-control" required>
-                    <span asp-validation-for="Data" class="text-danger"></span>
-                </div>
-                <div class="mb-3">
-                    <label asp-for="Hora" class="form-label">Hora</label>
-                    <input asp-for="Hora" type="time" class="form-control" required>
-                    <span asp-validation-for="Hora" class="text-danger"></span>
-                </div>
-                <div class="mb-3">
-                    <label asp-for="QuantidadeMaxPessoas" class="form-label">Vagas Disponíveis</label>
-                    <input asp-for="QuantidadeMaxPessoas" type="number" class="form-control" required>
-                    <span asp-validation-for="QuantidadeMaxPessoas" class="text-danger"></span>
-                </div>
-                <div class="mb-3">
-                    <label asp-for="valorIngresso" class="form-label">Valor do Ingresso</label>
-                    <input asp-for="valorIngresso" type="number" class="form-control" required>
-                    <span asp-validation-for="valorIngresso" class="text-danger"></span>
-                </div>
-                <button type="submit" class="btn btn-primary">Criar Evento</button>
-                <a href="#" class="btn btn-secondary">Voltar</a>
-            </form>
+            </div>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            // Adiciona máscara de moeda ao campo de valor
+            $("#TicketPrice").on("input", function() {
+                let value = $(this).val();
+                value = value.replace(/\D/g, "");
+                value = (value/100).toFixed(2);
+                $(this).val(value);
+            });
+        });
+    </script>
+}

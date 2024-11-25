@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "D:\\Prova_pratica_romes_c#\\EventManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|d:\\prova_pratica_romes_c#\\eventmanager\\views\\eventos\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|solutionrelative:views\\eventos\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|d:\\prova_pratica_romes_c#\\eventmanager\\views\\convidados\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|solutionrelative:views\\convidados\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|d:\\prova_pratica_romes_c#\\eventmanager\\views\\eventos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|solutionrelative:views\\eventos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,27 +31,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Eventos\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Views\\Eventos\\Delete.cshtml",
-              "ToolTip": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Eventos\\Delete.cshtml",
-              "RelativeToolTip": "Views\\Eventos\\Delete.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Eventos\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Eventos\\Create.cshtml",
+              "ToolTip": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Eventos\\Create.cshtml*",
+              "RelativeToolTip": "Views\\Eventos\\Create.cshtml*",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAADIAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-24T20:18:08.69Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Convidados\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Views\\Convidados\\Delete.cshtml",
-              "ToolTip": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Convidados\\Delete.cshtml",
-              "RelativeToolTip": "Views\\Convidados\\Delete.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABrAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-24T20:16:39.777Z",
+              "WhenOpened": "2024-11-25T00:08:40.518Z",
               "EditorCaption": ""
             }
           ]
