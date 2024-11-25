@@ -64,20 +64,23 @@ O aplicativo será iniciado em seu navegador padrão.
 ## Estrutura do Projeto
 ```
 EventManager/
-├── Controllers/
+├── Controllers/ 
+│   ├── ConvidadosController.cs
+│   ├── EventosController.cs
 │   ├── HomeController.cs
-│   ├── EventController.cs
-│   └── UserController.cs
+│   └── UsuariosController.cs
 ├── Models/
-│   ├── Event.cs
-│   ├── User.cs
-│   └── ViewModels/
+│   ├── Convidado.cs
+│   ├── Evento.cs
+│   └── Usuario.cs
+│   
 ├── Views/
+│   ├── Convidados/
+│   ├── Eventos/
 │   ├── Home/
-│   ├── Event/
-│   └── User/
+│   └── Usuarios/
 └── Data/
-    └── ApplicationDbContext.cs
+    └── GerenciadorEventosContext.cs
 ```
 
 ## Uso
@@ -90,6 +93,7 @@ EventManager/
 4. Para participar de um evento:
    - Busque o evento desejado
    - Visualize os detalhes
+   - Preencha as informações necessárias
    - Confirme sua presença
 
 ## Contribuindo
@@ -103,6 +107,6 @@ EventManager/
 Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
 ## Contato
-Seu Nome - [seu-email@exemplo.com](mailto:seu-email@exemplo.com)
+Halbert Nascimento - [halbertfsa@gmail.com](mailto:halbertfsa@gmail.com)
 
-Link do Projeto: [https://github.com/seu-usuario/EventManager](https://github.com/seu-usuario/EventManager)
+Link do Projeto: [https://github.com/Halbert-Nascimento/EventManager](https://github.com/Halbert-Nascimento/EventManager)
