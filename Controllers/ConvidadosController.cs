@@ -46,32 +46,7 @@ namespace EventManager.Controllers
             return View(convidado);
         }
 
-        // GET: Convidados/Create
-        //public IActionResult Create()
-        //{
-        //    ViewData["EventoId"] = new SelectList(_context.Eventos, "Id", "Titulo");
-        //    return View();
-        //}
-
-        //// POST: Convidados/Create
-        //// To protect from overposting attacks, enable the specific properties you want to bind to.
-        //// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create([Bind("Id,Nome,Sex,Email,EventoId")] Convidado convidado)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _context.Add(convidado);
-        //        await _context.SaveChangesAsync();
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    ViewData["EventoId"] = new SelectList(_context.Eventos, "Id", "id", convidado.EventoId);
-        //    return View(convidado);
-        //}
-
-        //// ___________________________________________________________
-
+        
         // Criação de um convidado (GET)
         public IActionResult Create(int eventoId)
         {
@@ -114,9 +89,7 @@ namespace EventManager.Controllers
             return View(convidado);
         }
 
-        // POST: Convidados/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Convidados/Edit/5        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Sex,Email,EventoId")] Convidado convidado)
