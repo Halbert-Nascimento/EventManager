@@ -30,6 +30,6 @@ namespace EventManager.Data
                 .HasForeignKey(c => c.EventoId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
-        //public DbSet<EventManager.Models.Usuario> Usuario { get; set; } = default!;
+        
     }
 }
