@@ -15,12 +15,14 @@
                 <p>@Model.Email</p>
                 <a class="btn btn-primary m-3" asp-action="Edit" asp-route-id="@Model?.Id">Editar Perfil</a>
                 <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model?.Id">Excluir Conta</a>
-                <a class="btn btn-success" asp-controller="Eventos" asp-action="Create" asp-route-usuarioId="@Model.Id">Criar Novo Evento</a>
+                
             </div>
         </div>
 
         <div class="col-md-8">
-            <h2>Meus Eventos</h2>
+            <h2>Meus Eventos - 
+                <a class="btn btn-success" asp-controller="Eventos" asp-action="Create" asp-route-usuarioId="@Model.Id">Criar Novo Evento</a>
+            </h2>
             @if (Model.Eventos?.Any() == true){
 
                 <table class="table">
