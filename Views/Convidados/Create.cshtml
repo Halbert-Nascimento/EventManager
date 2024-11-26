@@ -7,7 +7,12 @@
 <h1>Inscrever no evento</h1>
 
 <form asp-action="Create">
-    
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["MensagemSucesso"]
+        </div>
+    }
 
     <div class="form-group">
         <label asp-for="Nome">Nome</label>

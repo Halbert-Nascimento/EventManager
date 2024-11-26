@@ -8,6 +8,12 @@
     <div class="row">
         <div class="col-md-8">
             <h1 class="display-4">Próximos Eventos</h1>
+            @if (TempData["MensagemSucesso"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["MensagemSucesso"]
+                </div>
+            }
 
             @foreach (var item in Model)
             {

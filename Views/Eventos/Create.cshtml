@@ -21,32 +21,32 @@
                         <input type="hidden" asp-for="UsuarioId" value="@ViewBag.UsuarioId" />
 
                         <div class="mb-3">
-                            <label asp-for="Titulo" class="form-label"></label>
+                            <label asp-for="Titulo" class="form-label">Titulo</label>
                             <input asp-for="Titulo" class="form-control" placeholder="Digite o título do evento" />
                             <span asp-validation-for="Titulo" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="Descricao" class="form-label"></label>
+                            <label asp-for="Descricao" class="form-label">Descrição</label>
                             <textarea asp-for="Descricao" class="form-control" rows="4"
                                       placeholder="Descreva os detalhes do evento"></textarea>
                             <span asp-validation-for="Descricao" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="Local" class="form-label"></label>
+                            <label asp-for="Local" class="form-label">Local</label>
                             <input asp-for="Local" class="form-control" placeholder="Endereço do evento" />
                             <span asp-validation-for="Local" class="text-danger"></span>
                         </div>
 
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <label asp-for="Data" class="form-label"></label>
+                                <label asp-for="Data" class="form-label">Data</label>
                                 <input asp-for="Data" class="form-control" type="date" />
                                 <span asp-validation-for="Data" class="text-danger"></span>
                             </div>
                             <div class="col-md-6">
-                                <label asp-for="Hora" class="form-label"></label>
+                                <label asp-for="Hora" class="form-label">Hora</label>
                                 <input asp-for="Hora" class="form-control" type="time" />
                                 <span asp-validation-for="Hora" class="text-danger"></span>
                             </div>
@@ -54,12 +54,12 @@
 
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <label asp-for="QuantidadeMaxPessoas" class="form-label"></label>
+                                <label asp-for="QuantidadeMaxPessoas" class="form-label">Total vagas</label>
                                 <input asp-for="QuantidadeMaxPessoas" class="form-control" type="number" min="1" />
                                 <span asp-validation-for="QuantidadeMaxPessoas" class="text-danger"></span>
                             </div>
                             <div class="col-md-6">
-                                <label asp-for="valorIngresso" class="form-label"></label>
+                                <label asp-for="valorIngresso" class="form-label">Valor ingresso</label>
                                 <div class="input-group">
                                     <span class="input-group-text">R$</span>
                                     <input asp-for="valorIngresso" class="form-control" type="number" step="0.01" min="0" />

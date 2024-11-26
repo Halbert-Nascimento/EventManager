@@ -75,9 +75,9 @@ namespace EventManager.Controllers
                     evento = await _context.Eventos
                         .Include(e => e.Convidados)
                         .FirstOrDefaultAsync(e => e.Id == id);
+                        ViewBag.totalConvidados = evento.Convidados.Count;
                 }
             }
-           
 
             return View(evento);
         }
@@ -107,6 +107,7 @@ namespace EventManager.Controllers
             {
                 _context.Eventos.Add(evento);
                 await _context.SaveChangesAsync();
+                TempData["MensagemSucesso"] = $"Evento Criado com sucesso";
                 return RedirectToAction("Details", "Usuarios", new { id = evento.UsuarioId });
             }
             return View(evento);
@@ -172,6 +173,7 @@ namespace EventManager.Controllers
                         throw;
                     }
                 }
+                TempData["MensagemSucesso"] = $"Alteração realizada ";
                 return RedirectToAction("Details", "Usuarios");
             }
             return View(evento);
@@ -216,69 +218,70 @@ namespace EventManager.Controllers
             }
 
             await _context.SaveChangesAsync();
+            TempData["MensagemSucesso"] = $"Evento apagado com sucesso ";
             return RedirectToAction("Details", "Usuarios");
         }
 
         // ___________________________________________________________apagar
 
-        // GET: Eventos/Register/5
-        public async Task<IActionResult> Register(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //// GET: Eventos/Register/5
+        //public async Task<IActionResult> Register(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var evento = await _context.Eventos
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (evento == null)
-            {
-                return NotFound();
-            }
-            ViewData["EventoId"] = evento.Id;
-            ViewData["EventoTitulo"] = evento.Titulo;
-            ViewData["QtMaxPessoas"] = evento.QuantidadeMaxPessoas;
+        //    var evento = await _context.Eventos
+        //        .FirstOrDefaultAsync(m => m.Id == id);
+        //    if (evento == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    ViewData["EventoId"] = evento.Id;
+        //    ViewData["EventoTitulo"] = evento.Titulo;
+        //    ViewData["QtMaxPessoas"] = evento.QuantidadeMaxPessoas;
 
-            return View();
-        }
+        //    return View();
+        //}
 
-        // POST: Eventos/Register
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(int eventoId,[Bind("Id,Nome,Sex,Email,EventoId, Evento")] Convidado convidado)
-        {
-            if (!ModelState.IsValid)
-            { // Log dos erros de validação
-                foreach (var modelStateKey in ModelState.Keys)
-                {
-                    var value = ModelState[modelStateKey];
-                    foreach (var error in value.Errors)
-                    {
-                        Console.WriteLine($"Error id >>>>>: {eventoId}");
-                        Console.WriteLine($"Error >>>>>: {error.ErrorMessage}");
-                    }
-                }
-            }
+        //// POST: Eventos/Register
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Register(int eventoId,[Bind("Id,Nome,Sex,Email,EventoId, Evento")] Convidado convidado)
+        //{
+        //    if (!ModelState.IsValid)
+        //    { // Log dos erros de validação
+        //        foreach (var modelStateKey in ModelState.Keys)
+        //        {
+        //            var value = ModelState[modelStateKey];
+        //            foreach (var error in value.Errors)
+        //            {
+        //                Console.WriteLine($"Error id >>>>>: {eventoId}");
+        //                Console.WriteLine($"Error >>>>>: {error.ErrorMessage}");
+        //            }
+        //        }
+        //    }
 
-            if (ModelState.IsValid)
-            {
-                // Buscando o evento do banco de dados
-                var evento = await _context.Eventos.FindAsync(eventoId); 
-                if (evento == null) 
-                { 
-                    return NotFound(); 
-                } // Definindo a relação entre Convidado e Evento
-                convidado.EventoId = eventoId; 
-                //convidado.Evento = evento;
+        //    if (ModelState.IsValid)
+        //    {
+        //        // Buscando o evento do banco de dados
+        //        var evento = await _context.Eventos.FindAsync(eventoId); 
+        //        if (evento == null) 
+        //        { 
+        //            return NotFound(); 
+        //        } // Definindo a relação entre Convidado e Evento
+        //        convidado.EventoId = eventoId; 
+        //        //convidado.Evento = evento;
 
 
-                _context.Convidados.Add(convidado);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index), new { id = eventoId });
-            }
-            ViewData["EventoId"] = eventoId;
-            return View(convidado);
-        }
+        //        _context.Convidados.Add(convidado);
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToAction(nameof(Index), new { id = eventoId });
+        //    }
+        //    ViewData["EventoId"] = eventoId;
+        //    return View(convidado);
+        //}
 
         // ___________________________________________________________
 

@@ -52,7 +52,7 @@ namespace EventManager.Controllers
             await HttpContext.SignInAsync("CookieAuth", principal);
 
 
-
+            
             return RedirectToAction(nameof(Details));
         }
 
@@ -62,6 +62,7 @@ namespace EventManager.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync("CookieAuth");
+            TempData["MensagemSucesso"] = $"Logout realizado com sucesso ";
             return RedirectToAction("Login", "Usuarios");
         }
 
@@ -115,6 +116,7 @@ namespace EventManager.Controllers
                 usuario.SenhaHash = BCrypt.Net.BCrypt.HashPassword(usuario.SenhaHash);
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
+                TempData["MensagemSucesso"] = $"Conta criada, faça o login usando email e senha cadastrados!";
                 return RedirectToAction(nameof(Login));
             }
             return View(usuario);
@@ -166,6 +168,7 @@ namespace EventManager.Controllers
                         throw;
                     }
                 }
+                TempData["MensagemSucesso"] = $"Alterações salvas";
                 return RedirectToAction(nameof(Details));
             }
             return View(usuario);
@@ -201,6 +204,7 @@ namespace EventManager.Controllers
             }
 
             await _context.SaveChangesAsync();
+            TempData["MensagemSucesso"] = $"Conta excluida";
             return RedirectToAction(nameof(Create));
         }
 

@@ -6,6 +6,12 @@
 
 <div class="container mt-5">
     <div class="row justify-content-center">
+        @if (TempData["MensagemSucesso"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["MensagemSucesso"]
+            </div>
+        }
         <div class="col-md-8">
             <h1 class="display-4">Editar Perfil</h1>
         <form asp-action="Edit">

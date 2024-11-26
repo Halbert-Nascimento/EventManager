@@ -63,6 +63,8 @@ namespace EventManager.Controllers
             {
                 _context.Convidados.Add(convidado);
                 await _context.SaveChangesAsync();
+                // Mensagem de sucesso
+                TempData["MensagemSucesso"] = $"{convidado.Nome}, inscrição confirmada!";
                 return RedirectToAction("Details", "Eventos", new { id = convidado.EventoId });
             }
 
@@ -155,9 +157,11 @@ namespace EventManager.Controllers
             {
                 _context.Convidados.Remove(convidado);
             }
-
+            
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            TempData["MensagemSucesso"] = $"Participante Removido com sucesso ";
+            return RedirectToAction("Details", "Eventos", new { id = convidado.EventoId });
+            //return RedirectToAction(nameof("Index"));
         }
 
         private bool ConvidadoExists(int id)

@@ -10,6 +10,12 @@
     <div class="row">
         <div class="col-md-4">
             <div class="text-center">
+                @if (TempData["MensagemSucesso"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["MensagemSucesso"]
+                    </div>
+                }
                 <img src="https://via.placeholder.com/150" class="rounded-circle img-thumbnail" alt="Foto de perfil">
                 <h2>@Model.Nome</h2>
                 <p>@Model.Email</p>
