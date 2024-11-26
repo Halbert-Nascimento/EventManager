@@ -8,15 +8,15 @@ namespace EventManager.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Por favor adicione o nome")]
         [StringLength(50)]
         public string Nome { get; set; } = string.Empty;
 
-        [Required]
+        [Required(ErrorMessage = "Por favor selecione o sexo")]
         [StringLength(50)]
         public string Sex { get; set; } = string.Empty;
 
-        [Required]
+        [Required(ErrorMessage = "Por favor adicione email para contato")]
         public string Email { get; set; } = string.Empty;
 
         // Chave estrangeira para Evento

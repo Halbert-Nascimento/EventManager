@@ -8,25 +8,27 @@ namespace EventManager.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O campo Título é obrigatório.")]
         [StringLength(100)]
         public string Titulo { get; set; } = string.Empty;
 
-        [Required]
+        [Required(ErrorMessage = "Por favor adicione uma descrição.")]
         [StringLength(500)]
         public string Descricao { get; set; } = string.Empty;
 
-        [Required]
+        [Required(ErrorMessage = "Por favor adicione o local que ocorrera o evento.")]
         public string Local { get; set; } = string.Empty;
 
-        [Required]
+        [Required(ErrorMessage = "Por favor adicione a data do evento.")]
         public DateOnly Data {  get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Por favor adicione o horario do evento.")]
         public TimeOnly Hora { get; set; }
 
+        [Required(ErrorMessage = "Por favor adicione quantas pessoas o evento suporta")]
         public int QuantidadeMaxPessoas { get; set; }
 
+        [Required(ErrorMessage = "Por favor adicione o valor do ingresso, 0 para gratuito")]
         [Range(0, double.MaxValue)]
         public decimal valorIngresso { get; set; }
 
