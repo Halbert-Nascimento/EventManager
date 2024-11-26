@@ -30,6 +30,23 @@ namespace EventManager.Controllers
             var eventos = await _context.Eventos.ToListAsync();
             return View(eventos);
         }
+        // GET: Eventos
+        public async Task<IActionResult> MyEvent()
+        {
+            // Recupera o ID do usuário logado
+            var usuarioId = User.FindFirst("UsuarioId")?.Value;
+
+            if (usuarioId == null)
+            {
+                return RedirectToAction("Login", "Usuarios");
+            }
+            int id = int.Parse(usuarioId);
+
+            ViewBag.UsuarioId = id;
+
+            var eventos = await _context.Eventos.Where(e => e.UsuarioId == id).ToListAsync();
+            return View(eventos);
+        }
 
         // GET: Eventos/Details/5
         public async Task<IActionResult> Details(int? id)
