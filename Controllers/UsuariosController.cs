@@ -204,6 +204,7 @@ namespace EventManager.Controllers
             }
 
             await _context.SaveChangesAsync();
+            await HttpContext.SignOutAsync("CookieAuth");
             TempData["MensagemSucesso"] = $"Conta excluida";
             return RedirectToAction(nameof(Create));
         }
