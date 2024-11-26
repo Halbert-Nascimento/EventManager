@@ -161,7 +161,7 @@ namespace EventManager.Controllers
             await _context.SaveChangesAsync();
             TempData["MensagemSucesso"] = $"Participante Removido com sucesso ";
             return RedirectToAction("Details", "Eventos", new { id = convidado.EventoId });
-            //return RedirectToAction(nameof("Index"));
+            
         }
 
         private bool ConvidadoExists(int id)
