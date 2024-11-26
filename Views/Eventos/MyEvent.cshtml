@@ -1,0 +1,54 @@
+﻿@model IEnumerable<EventManager.Models.Evento>
+
+
+@{
+    ViewData["Title"] = "Meus eventos";
+}
+
+
+<div class="container mt-5">
+    <div class="row">
+
+
+        <div class="col-md-8">
+            <h2>Meus Eventos - 
+                <a class="btn btn-success" asp-controller="Eventos" asp-action="Create" asp-route-usuarioId="@ViewBag.UsuarioId">Criar Novo Evento</a>
+            </h2>
+            @if (Model.Any() == true){
+
+                <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Data</th>
+                                <th>Hora</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                    @foreach (var evento in Model)
+                    {
+
+
+                        <tbody>
+                            <tr >
+                                <td>@evento.Titulo</td>
+                                <td>@evento.Data</td>
+                                <td>@evento.Hora</td>
+                                <td>
+                                    <a class="btn btn-secondary" asp-controller="Convidados" asp-action="Create" asp-route-eventoId="@evento.Id">Convidar</a>
+                                    <a class="btn btn-primary" asp-controller="Eventos" asp-action="Edit" asp-route-id="@evento.Id">Editar</a>
+                                    <a class="btn btn-danger" asp-controller="Eventos" asp-action="Delete" asp-route-id="@evento.Id">Excluir</a>
+                                    <a class="btn btn-success" asp-controller="Eventos" asp-action="Details" asp-route-id="@evento.Id">Confirmados</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+
+            }else{
+                <p>Sem Evento cadastrado.</p>
+            }
+        </div>
+    </div>
+</div>
+
