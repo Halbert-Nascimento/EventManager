@@ -92,7 +92,7 @@ namespace EventManager.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (usuario == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
             return View(usuario);
@@ -127,13 +127,13 @@ namespace EventManager.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
             var usuario = await _context.Usuarios.FindAsync(id);
             if (usuario == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
             return View(usuario);
         }
@@ -145,7 +145,7 @@ namespace EventManager.Controllers
         {
             if (id != usuario.Id)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
             if (ModelState.IsValid)
@@ -161,7 +161,7 @@ namespace EventManager.Controllers
                 {
                     if (!UsuarioExists(usuario.Id))
                     {
-                        return NotFound();
+                        return RedirectToAction("NoAccess", "Home");
                     }
                     else
                     {
@@ -179,14 +179,14 @@ namespace EventManager.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
             var usuario = await _context.Usuarios
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (usuario == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
             return View(usuario);

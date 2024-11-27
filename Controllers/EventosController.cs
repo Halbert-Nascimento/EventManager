@@ -54,14 +54,14 @@ namespace EventManager.Controllers
             ViewBag.totalConvidados = 0;
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }           
 
             //recuperar evento
             var evento = await _context.Eventos.FindAsync(id);
             if(evento == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
             //verifcar se usuario esta autenticado
@@ -130,7 +130,7 @@ namespace EventManager.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
 
@@ -138,7 +138,7 @@ namespace EventManager.Controllers
             var evento = await _context.Eventos.FindAsync(id);
             if (evento == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
             // Recupera o ID do usuário logado
@@ -160,7 +160,7 @@ namespace EventManager.Controllers
         {
             if (id != evento.Id)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
             if (ModelState.IsValid)
@@ -175,7 +175,7 @@ namespace EventManager.Controllers
                 {
                     if (!EventoExists(evento.Id))
                     {
-                        return NotFound();
+                        return RedirectToAction("NoAccess", "Home");
                     }
                     else
                     {
@@ -194,14 +194,14 @@ namespace EventManager.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
             var evento = await _context.Eventos.FindAsync(id);
 
             if (evento == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
             // Recupera o ID do usuário logado
             var usuarioId = int.Parse(User.FindFirst("UsuarioId")?.Value);

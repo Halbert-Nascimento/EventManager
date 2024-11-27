@@ -32,7 +32,7 @@ namespace EventManager.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
             var convidado = await _context.Convidados
@@ -40,7 +40,7 @@ namespace EventManager.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (convidado == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
             return View(convidado);
@@ -81,13 +81,13 @@ namespace EventManager.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
             var convidado = await _context.Convidados.FindAsync(id);
             if (convidado == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
             ViewData["EventoId"] = new SelectList(_context.Eventos, "Id", "Descricao", convidado.EventoId);
             return View(convidado);
@@ -100,7 +100,7 @@ namespace EventManager.Controllers
         {
             if (id != convidado.Id)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
             if (ModelState.IsValid)
@@ -135,7 +135,7 @@ namespace EventManager.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
             var convidado = await _context.Convidados
@@ -143,7 +143,7 @@ namespace EventManager.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (convidado == null)
             {
-                return NotFound();
+                return RedirectToAction("NoAccess", "Home");
             }
 
             return View(convidado);
