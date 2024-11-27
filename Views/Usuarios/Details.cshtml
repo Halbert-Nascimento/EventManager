@@ -33,7 +33,7 @@
 
         <div class="col-md-8">
             <h2>Meus Eventos - 
-                <a class="btn btn-success" asp-controller="Eventos" asp-action="Create" asp-route-usuarioId="@Model.Id">Criar Novo Evento</a>
+                <a class="btn btn-primary" asp-controller="Eventos" asp-action="Create" asp-route-usuarioId="@Model.Id">Criar Novo Evento</a>
             </h2>
             @if (Model.Eventos?.Any() == true){
 

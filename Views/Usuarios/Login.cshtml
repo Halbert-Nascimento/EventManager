@@ -34,11 +34,20 @@
                             <label for="password" class="form-label">Senha</label>
                             <input type="password" class="form-control" id="password" name="senha">
                         </div>
-                        <div class="form-check">
+                        <div class="form-check d-flex justify-content-between">
 
-                            <input type="checkbox" class="form-check-input" id="rememberMe">
-                            <label class="form-check-label" for="rememberMe">Lembrar-me</label>
+                            <div>
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Lembrar-me</label>
+                            </div>
 
+
+                            <a class="nav-link text-dark" asp-controller="Usuarios" asp-action="Create">
+                                <strong>Não possui conta?</strong>
+                                cadastre-se!
+                            </a>
+                            
+                                                       
                         </div>
                         <button type="submit" class="btn btn-primary">Entrar</button>
 
