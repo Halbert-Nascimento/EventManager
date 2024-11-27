@@ -50,7 +50,9 @@ namespace EventManager.Controllers
         // Criação de um convidado (GET)
         public IActionResult Create(int eventoId)
         {
+            var evento = _context.Eventos.Find(eventoId);
             ViewBag.EventoId = eventoId;
+            ViewBag.Evento = evento;
             return View();
         }
 

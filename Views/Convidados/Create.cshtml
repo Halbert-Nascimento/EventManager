@@ -4,7 +4,7 @@
     ViewData["Title"] = "Incrição evento";
 }
 
-<h1>Inscrever no evento</h1>
+<h1>Inscrever no evento - @ViewBag.Evento.Titulo</h1>
 
 <form asp-action="Create">
     @if (TempData["MensagemSucesso"] != null)

@@ -51,6 +51,7 @@ namespace EventManager.Controllers
         // GET: Eventos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            ViewBag.totalConvidados = 0;
             if (id == null)
             {
                 return NotFound();
@@ -78,6 +79,10 @@ namespace EventManager.Controllers
                         ViewBag.totalConvidados = evento.Convidados.Count;
                 }
             }
+            var totalConvidados = await _context.Convidados
+                .Where(c => c.EventoId == id)
+                .CountAsync();
+            ViewBag.totalConvidados = totalConvidados;
 
             return View(evento);
         }
