@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\Prova_pratica_romes_c#\\EventManager\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|d:\\prova_pratica_romes_c#\\eventmanager\\views\\eventos\\myevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|solutionrelative:views\\eventos\\myevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|d:\\prova_pratica_romes_c#\\eventmanager\\views\\usuarios\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|solutionrelative:views\\usuarios\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|d:\\prova_pratica_romes_c#\\eventmanager\\views\\eventos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|solutionrelative:views\\eventos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|d:\\prova_pratica_romes_c#\\eventmanager\\views\\usuarios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|solutionrelative:views\\usuarios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -13,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|d:\\prova_pratica_romes_c#\\eventmanager\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|solutionrelative:views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|d:\\prova_pratica_romes_c#\\eventmanager\\views\\usuarios\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0A5A9586-1BE8-44BD-A904-10C1D223DCEE}|EventManager.csproj|solutionrelative:views\\usuarios\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,12 +50,38 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Eventos\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Eventos\\Create.cshtml",
+              "ToolTip": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Eventos\\Create.cshtml",
+              "RelativeToolTip": "Views\\Eventos\\Create.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-27T19:36:25.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MyEvent.cshtml",
+              "DocumentMoniker": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Eventos\\MyEvent.cshtml",
+              "RelativeDocumentMoniker": "Views\\Eventos\\MyEvent.cshtml",
+              "ToolTip": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Eventos\\MyEvent.cshtml*",
+              "RelativeToolTip": "Views\\Eventos\\MyEvent.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-27T18:56:40.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Usuarios\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Usuarios\\Details.cshtml",
-              "ToolTip": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Usuarios\\Details.cshtml*",
-              "RelativeToolTip": "Views\\Usuarios\\Details.cshtml*",
+              "ToolTip": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Usuarios\\Details.cshtml",
+              "RelativeToolTip": "Views\\Usuarios\\Details.cshtml",
               "ViewState": "AgIAABIAAAAAAAAAAAAAACMAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-27T18:55:54.928Z",
@@ -55,7 +89,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Usuarios\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Usuarios\\Create.cshtml",
@@ -68,20 +102,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Usuarios\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Usuarios\\Login.cshtml",
               "ToolTip": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Usuarios\\Login.cshtml",
               "RelativeToolTip": "Views\\Usuarios\\Login.cshtml",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAuwC0AAABCAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAuwCQAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-27T18:36:10.184Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Prova_pratica_romes_c#\\EventManager\\Views\\Convidados\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Convidados\\Create.cshtml",

@@ -32,8 +32,9 @@
         </div>
 
         <div class="col-md-8">
-            <h2>Meus Eventos - 
-                <a class="btn btn-primary" asp-controller="Eventos" asp-action="Create" asp-route-usuarioId="@Model.Id">Criar Novo Evento</a>
+            <h2 class="bg-primary card-header text-white d-flex justify-content-between ">
+                Meus Eventos -
+                <a class="btn btn-primary btn-outline-light" asp-controller="Eventos" asp-action="Create" asp-route-usuarioId="@Model.Id">Criar Novo Evento</a>
             </h2>
             @if (Model.Eventos?.Any() == true){
 
