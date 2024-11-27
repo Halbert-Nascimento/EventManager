@@ -33,7 +33,7 @@
 
         <div class="col-md-8">
             <h2 class="bg-primary card-header text-white d-flex justify-content-between ">
-                Meus Eventos -
+                Meus Eventos 
                 <a class="btn btn-primary btn-outline-light" asp-controller="Eventos" asp-action="Create" asp-route-usuarioId="@Model.Id">Criar Novo Evento</a>
             </h2>
             @if (Model.Eventos?.Any() == true){
@@ -60,7 +60,7 @@
                                     <a class="btn btn-secondary" asp-controller="Convidados" asp-action="Create" asp-route-eventoId="@evento.Id">Convidar</a>
                                     <a class="btn btn-primary" asp-controller="Eventos" asp-action="Edit" asp-route-id="@evento.Id">Editar</a>
                                     <a class="btn btn-danger" asp-controller="Eventos" asp-action="Delete" asp-route-id="@evento.Id">Excluir</a>
-                                    <a class="btn btn-success" asp-controller="Eventos" asp-action="Details" asp-route-id="@evento.Id">Confirmados</a>
+                                    <a class="btn btn-success" asp-controller="Eventos" asp-action="Details" asp-route-id="@evento.Id">Informações</a>
                                 </td>
                             </tr>
                         </tbody>

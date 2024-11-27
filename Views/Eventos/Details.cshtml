@@ -38,7 +38,8 @@
 
          @if (User.Identity.IsAuthenticated){ 
         <div class="col-md-6">
-            <h2>Participantes confirmados - Total @ViewBag.totalConvidados</h2>
+                
+                <h2 class="bg-primary card-header text-white d-flex justify-content-between ">Participantes confirmados - Total @ViewBag.totalConvidados</h2>
             <table class="table">
                     @if (Model.Convidados?.Any() == true){
                 <thead>

@@ -6,54 +6,6 @@
 
 
 
-
-
-@* <div class="container mt-5"> *@
-@*     <div class="row justify-content-center"> *@
-@*         @if (TempData["MensagemSucesso"] != null) *@
-@*         { *@
-@*             <div class="alert alert-success"> *@
-@*                 @TempData["MensagemSucesso"] *@
-@*             </div> *@
-@*         } *@
-@*         @if (TempData["MensagemError"] != null) *@
-@*         { *@
-@*             <div class="alert alert-success"> *@
-@*                 @TempData["MensagemError"] *@
-@*             </div> *@
-@*         } *@
-@*         <div class="col-md-6"> *@
-@*             <h1 class="display-4">Criar Conta</h1> *@
-@*             <form asp-action="Create"> *@
-@*                 <div class="mb-3"> *@
-@*                     <label asp-for="Nome" class="form-label">Nome</label> *@
-@*                     <input asp-for="Nome" type="text" class="form-control" id="nome" required> *@
-@*                     <span asp-validation-for="Nome" class="text-danger"></span> *@
-@*                 </div> *@
-@*                 <div class="mb-3"> *@
-@*                     <label asp-for="Email" class="form-label">Email</label> *@
-@*                     <input asp-for="Email" type="email" class="form-control" id="email" required> *@
-@*                     <span asp-validation-for="Email" class="text-danger"></span> *@
-@*                 </div> *@
-@*                 <div class="mb-3"> *@
-@*                     <label asp-for="SenhaHash" class="form-label">Senha</label> *@
-@*                     <input asp-for="SenhaHash" class="form-control" id="senha" required> *@
-@*                     <span asp-validation-for="SenhaHash" class="text-danger"></span> *@
-@*                 </div> *@
-@*                 <button type="submit" class="btn btn-primary">Criar Conta</button> *@
-                
-@*             </form> *@
-@*             <div asp-validation-summary="ModelOnly" class="text-danger"></div> *@
-@*         </div> *@
-@*     </div> *@
-@* </div> *@
-@*         <div> *@
-@*             <a asp-controller="Home" asp-action="Index">Voltar para Home</a> *@
-@*         </div> *@
-
-
-
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
