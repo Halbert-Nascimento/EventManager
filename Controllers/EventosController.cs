@@ -78,6 +78,10 @@ namespace EventManager.Controllers
                         .FirstOrDefaultAsync(e => e.Id == id);
                         ViewBag.totalConvidados = evento.Convidados.Count;
                 }
+                else
+                {
+                    TempData["MensagemError"] = $"Sem permição para visualizar participantes";
+                }
             }
             var totalConvidados = await _context.Convidados
                 .Where(c => c.EventoId == id)

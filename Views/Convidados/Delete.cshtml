@@ -5,6 +5,12 @@
 }
 
 <h3>Tem certeza de que deseja excluir participante?</h3>
+@if (TempData["MensagemError"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["MensagemError"]
+    </div>
+}
 <div>
     <div class="alert alert-danger" role="alert">
         Todos informações do participante serão excluídos permanentemente. Esta ação não pode ser desfeita.

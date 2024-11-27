@@ -14,6 +14,12 @@
                 @TempData["MensagemSucesso"]
             </div>
         }
+        @if (TempData["MensagemError"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["MensagemError"]
+            </div>
+        }
         <div class="col-md-6">
             <h1>@Model.Titulo</h1>
             <p>@Model.Descricao</p>
@@ -32,8 +38,9 @@
 
          @if (User.Identity.IsAuthenticated){ 
         <div class="col-md-6">
-            <h2>Convidados confirmados - Total @ViewBag.totalConvidados</h2>
+            <h2>Participantes confirmados - Total @ViewBag.totalConvidados</h2>
             <table class="table">
+                    @if (Model.Convidados?.Any() == true){
                 <thead>
                     <tr>
                         <th>Nome</th>
@@ -42,7 +49,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if (Model.Convidados?.Any() == true){
                         @foreach (var convidado in Model.Convidados){
 
                             <tr>
@@ -54,10 +60,15 @@
                                 </td>
                             </tr>
                         }
-                    }else{
-                        <p>Sem permição para visualizar.</p>   
-                    }
                 </tbody>
+                    }else{
+                            @if (TempData["MensagemError"] != null)
+                            {
+                            <div class="alert alert-warning">
+                                    @TempData["MensagemError"]
+                                </div>
+                            }
+                    }
             </table>
         </div>
          } 

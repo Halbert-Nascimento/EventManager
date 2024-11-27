@@ -14,6 +14,12 @@
                     @TempData["MensagemSucesso"]
                 </div>
             }
+            @if (TempData["MensagemError"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["MensagemError"]
+                </div>
+            }
 
             @foreach (var item in Model)
             {

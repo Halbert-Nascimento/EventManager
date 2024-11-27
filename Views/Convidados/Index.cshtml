@@ -11,6 +11,12 @@
         @TempData["MensagemSucesso"]
     </div>
 }
+@if (TempData["MensagemError"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["MensagemError"]
+    </div>
+}
 
 <p>
     <a asp-action="Create">Create New</a>

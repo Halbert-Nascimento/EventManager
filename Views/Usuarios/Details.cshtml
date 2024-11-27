@@ -16,6 +16,12 @@
                         @TempData["MensagemSucesso"]
                     </div>
                 }
+                @if (TempData["MensagemError"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["MensagemError"]
+                    </div>
+                }
                 <img src="https://via.placeholder.com/150" class="rounded-circle img-thumbnail" alt="Foto de perfil">
                 <h2>@Model.Nome</h2>
                 <p>@Model.Email</p>
